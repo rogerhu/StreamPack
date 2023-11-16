@@ -50,8 +50,7 @@ class ExtendedVideoTag(
         // ExVideoTagHeader
         output.put(
             0x80 or // IsExHeader
-                    (frameType.value shl 4) or // Frame Type
-                    packetType.value // PacketType
+                    (packetType.value shl 4) // PacketType
         )
         output.putInt(FourCCs.fromMimeType(mimeType).value.code) // Video FourCC
     }
